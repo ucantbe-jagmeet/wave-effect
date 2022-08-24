@@ -72,6 +72,7 @@ a .fluid::before
     border-radius: 45%;
     background: rgba(20,20,20,1);
     animation: animate 5s linear infinite;
+    
 }
 
 a .fluid::after
