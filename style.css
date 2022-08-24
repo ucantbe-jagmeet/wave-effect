@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0c0c0c;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2
+{
+    color: white;
+    padding-top: 20px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    /* border: 2px solid grey; */
+    padding: 20px 50px;
+    display: block;
+    text-transform: uppercase;
+    width: 200px;
+    border-radius: 40px;
+    overflow: hidden;
+}   
+
+a span{
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    z-index: 1;
+}
+
+a .fluid
+{
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #fd5f5f;
+    box-shadow: inset 0 0 50px rgba(0,0,0,.5);
+    transition: 0.5s;
+}
+
+
+a .fluid::before , 
+    a .fluid::after {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%,-75%);
+        background: #000;
+}
+
+a .fluid::before
+{
+    border-radius: 45%;
+    background: rgba(20,20,20,1);
+    animation: animate 5s linear infinite;
+}
+
+a .fluid::after
+{
+    border-radius: 40%;
+    background: rgba(20,20,20,0.5);
+    animation: animate 10s linear infinte ;
+}
+
+a:hover .fluid{
+    top: -120px;
+    background: #4973ff;
+}
+
+@keyframes animate
+{
+    0%{
+        transform: translate(-50%,-75%)rotate(0deg);
+    }
+    
+    100%
+    {
+        transform: translate(-50%,-75%)rotate(360deg);
+
+    }
+}
